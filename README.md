@@ -23,6 +23,8 @@ nginx-socketify is a nginx 3rd party upstream module which allow to massage(cust
 
 nginx-socketify module is vanilla c module, there is no any fancy dependencies needed.
 
+![Image of nginx-socketify](socketify-illustration.png)
+
 Example of nginx config for socketify will be provided.
 
 The following is simple demonstration how it communicate to redis, memcache and rabbitmq.
