@@ -1,0 +1,22 @@
+ngx_addon_name=ngx_http_socketify_module
+
+
+HTTP_SOCKETIFY_SRCS="$ngx_addon_dir/ngx_http_socketify_module.c \
+"
+
+HTTP_SOCKETIFY_DEPS="$NGX_ADDON_DEPS \
+"
+
+if test -n "$ngx_module_link"; then
+    ngx_module_type=HTTP
+    ngx_module_name=$ngx_addon_name
+    ngx_module_deps="$HTTP_SOCKETIFY_DEPS"
+    ngx_module_srcs="$HTTP_SOCKETIFY_SRCS"
+    #ngx_module_libs="-l..."
+    . auto/module
+else
+  HTTP_MODULES="$HTTP_MODULES ngx_http_socketify_module"
+  NGX_ADDON_DEPS="$NGX_ADDON_DEPS $HTTP_SOCKETIFY_DEPS"
+  NGX_ADDON_SRCS="$NGX_ADDON_SRCS $HTTP_SOCKETIFY_SRCS"
+  #CORE_LIBS="$CORE_LIBS $ngx_feature_libs"
+fi
